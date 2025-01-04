@@ -1,0 +1,18 @@
+void output_text(Flags *flag, char *line, int n) {
+  for (int i = 0; i < n; i++) {
+    if (flag->T && line[i] == '\t') {
+      printf("^I");
+
+
+
+    } else {
+      if (flag->E && line[i] == '\n') {
+        putchar('$');
+      }
+      if (flag->v) {
+        line[i] = v_flag(line[i]);
+      }
+      putchar(line[i]);
+    }
+  }
+}
